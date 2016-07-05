@@ -1,14 +1,15 @@
+
 var ferris = $("#ferris"),
     center = $("#center"),
     tl;
 
-TweenLite.set(center, {x:190, y:190});
+TweenLite.set(center, {x:290, y:290});
 
 //a little tricky getting the ferris wheel built, but it serves its purpose
 function addArms(numArms) {
   var space = 360/numArms;
   for (var i = 0; i < numArms; i++){
-    var newArm = $("<div>", {class:"arm"}).appendTo(center)
+    var newArm = $("<div>", {class:"arm", id: "arm" + i}).appendTo(center)
 
     // var newPivot = $("<div>", {class:"pivot outer"}).appendTo(center);
     // var newBasket = $("<div>", {class:"basket"}).appendTo(newPivot);
@@ -21,53 +22,37 @@ function addArms(numArms) {
 }
 
 //Get this party started
-addArms(9);//values between 2 and 12 work best
-TweenLite.from(ferris, 1, {autoAlpha:0});
-
-// //Animation (super easy)
-// tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
-// tl.to(center, 20, {rotation:360,  ease:Linear.easeNone})
-// //spin each basket in the opposite direction of the ferris wheel at same rate (no math)
-// tl.to($(".basket"), 20, {rotation:"-=360",  ease:Linear.easeNone},0)
+addArms(8);//values between 2 and 12 work best
+// TweenLite.from(ferris, 1, {autoAlpha:0});
 
 
-//UI Controls
-// $( "#slider" ).slider({
-//   range: false,
-//   min: 0,
-//   max: 1,
-//   step:.001,
-//   slide: function ( event, ui ) {
-//     tl.progress( ui.value ).pause();
-//   },
-//   stop: function( event, ui ) {tl.play()}
-// });
+//color game code:
 
-// function updateSlider() {
-// 		$("#slider").slider("value", tl.progress());
-// }
+// var colors = [red, green, blue, yellow]
 
-// $( "#sliderSpeed" ).slider({
-//   range: false,
-//   min: 0,
-//   max: 8,
-//   step:.02,
-//   value:1,
-//   slide: function ( event, ui ) {
-//     tl.timeScale( ui.value ).resume();
-//   }
-// });
+$arm = $('.arm')
+
+$arm.click(function(){
+  var $thisArm = $(this)
+  $thisArm.addClass('selectedArm')
+  setTimeout(function(){
+    console.log("changing back", this)
+    $thisArm.removeClass('selectedArm')
+  }, 500)
+
+})
 
 
-// $("#playBtn").click(function(){
-//   tl.play();
-// });
-// $("#pauseBtn").click(function(){
-// 	tl.pause();
-// });
 
-// $("#reverseBtn").click(function(){
-//   tl.reverse();
-// });
 
-console.log("im working");
+
+
+
+
+
+
+
+
+
+
+//Parts of this code was modeled after codepen example:

@@ -1,31 +1,96 @@
-.aside {
-  background-color: #000000;
-  float: left;
-  width: 500px;
-  height: 900%;
+
+body {
+	background-color:#ffffff;
+	margin:20px;
+  margin-left: 30%;
+  overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif;
 
 }
 
-
-.wheel {
-position: relative;
-margin: auto;
-width: 400px;
-height: 400px;
-position: relative;
-border-radius: 50%;
-border: 4px solid #600;
+.ferris {
+  position:relative;
+  margin:auto;
+  width:600px;
+  height:600px;
+  position:relative;
+  border-radius:50%;
+  border:6px solid #000;
+/*   visibility:hidden; */
 
 }
 
+.pivot{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background: magenta;
+}
 
-.arm1 {
-  width: 500px;
-  height: 5px;
+
+
+.arm {
+  width:300px;
+  height:8px;
   background: #000000;
-  position: absolute;
-  left: 10px;
-  top: 7px;
-  transform-origin: 0px 3px 0px;
-  transform: matrix(0, -1, 1, 0, 0, 0);
+  position:absolute;
+  left:10px;
+  top:7px;
+  opacity: 0.5;
 }
+
+
+#arm0 {
+  background-color: red;;
+}
+
+
+
+
+#arm1 {
+  background-color: black;
+}
+
+#arm2 {
+  background-color: green;
+}
+
+#arm3 {
+  background-color: orange;
+}
+
+#arm4 {
+  background-color: blue;
+}
+
+#arm5 {
+  background-color: magenta;
+}
+
+#arm6 {
+  background-color: yellow;
+}
+
+#arm7 {
+  background-color: purple;
+}
+
+.selectedArm {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Parts of this code was modeled after codepen example:
