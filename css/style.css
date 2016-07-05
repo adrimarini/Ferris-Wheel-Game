@@ -1,0 +1,31 @@
+.aside {
+  background-color: #000000;
+  float: left;
+  width: 500px;
+  height: 900%;
+
+}
+
+
+.wheel {
+position: relative;
+margin: auto;
+width: 400px;
+height: 400px;
+position: relative;
+border-radius: 50%;
+border: 4px solid #600;
+
+}
+
+
+.arm1 {
+  width: 500px;
+  height: 5px;
+  background: #000000;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  transform-origin: 0px 3px 0px;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
