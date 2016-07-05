@@ -1,3 +1,4 @@
+
 FERRIS WHEEL GAME
 
 In this game you will be asked to duplicate a light pattern shown on the Santa
