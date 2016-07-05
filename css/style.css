@@ -31,12 +31,13 @@ body {
 
 .arm {
   width:300px;
-  height:8px;
+  height:15px;
   background: #000000;
   position:absolute;
   left:10px;
   top:7px;
   opacity: 0.5;
+  border: dashed;
 }
 
 

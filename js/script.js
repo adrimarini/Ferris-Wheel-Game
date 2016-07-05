@@ -28,8 +28,6 @@ addArms(8);//values between 2 and 12 work best
 
 //color game code:
 
-// var colors = [red, green, blue, yellow]
-
 $arm = $('.arm')
 
 $arm.click(function(){
@@ -42,9 +40,19 @@ $arm.click(function(){
 
 })
 
+$redLight = $('#startGame')
 
+$redLight.click(function(){
+  $('#arm0').addClass('selectedArm')
+  setTimeout(function(){
+    $('#arm0').removeClass('selectedArm')
+  }, 500);
+})
 
+var elems = document.getElementByClass('arm');
+var colorArray = jQuery.makeArray( elems );
 
+console.log(colorArray)
 
 
 
