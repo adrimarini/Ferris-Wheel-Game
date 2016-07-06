@@ -1,12 +1,14 @@
 
 body {
-	background-color:#ffffff;
+	background-color:#000000;
 	margin:20px;
   margin-left: 30%;
   overflow:hidden;
 	font-family:Arial, Helvetica, sans-serif;
 
 }
+
+
 
 .ferris {
   position:relative;
@@ -15,7 +17,7 @@ body {
   height:600px;
   position:relative;
   border-radius:50%;
-  border:6px solid #000;
+  border:6px solid #fff;
 /*   visibility:hidden; */
 
 }
@@ -31,7 +33,7 @@ body {
 
 .arm {
   width:300px;
-  height:15px;
+  height:10px;
   background: #000000;
   position:absolute;
   left:10px;
@@ -45,11 +47,8 @@ body {
   background-color: red;;
 }
 
-
-
-
 #arm1 {
-  background-color: black;
+  background-color: lime;
 }
 
 #arm2 {

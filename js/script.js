@@ -3,6 +3,8 @@ var ferris = $("#ferris"),
     center = $("#center"),
     tl;
 
+
+
 TweenLite.set(center, {x:290, y:290});
 
 //a little tricky getting the ferris wheel built, but it serves its purpose
@@ -28,8 +30,10 @@ addArms(8);//values between 2 and 12 work best
 
 //color game code:
 
+
 $arm = $('.arm')
 
+var guess = []
 $arm.click(function(){
   var $thisArm = $(this)
   $thisArm.addClass('selectedArm')
@@ -37,22 +41,62 @@ $arm.click(function(){
     console.log("changing back", this)
     $thisArm.removeClass('selectedArm')
   }, 500)
+  guess.push(this)
+  if (guess[guess.length - 1] !== currentSequence[currentSequence.length - 1]) {
+    alert("Game Over. You made it to Level " + currentSequence.length)
+  }
 
 })
 
-$redLight = $('#startGame')
+//THIS MAKES IT SO YOU CLICK START AND THE RED ARM LIGHTS UP:
+// $redLight = $('#startGame')
+//
+// $redLight.click(function(){
+//   $('#arm0').addClass('selectedArm')
+//   setTimeout(function(){
+//     $('#arm0').removeClass('selectedArm')
+//   }, 500);
+// })
 
-$redLight.click(function(){
-  $('#arm0').addClass('selectedArm')
+var currentSequence = [];
+
+
+//array that gives back random arm
+var $allArms = [];
+$('.arm').each(function(){
+    $allArms.push(this);
+});
+//function that houses the random arm and adds to currentSequence
+var getArm = function(){
+
+  var $anArm =  $allArms[Math.floor(Math.random() *$allArms.length)]
+  currentSequence.push($anArm);
+
+  return currentSequence[currentSequence.length - 1]
+}
+
+
+//if the user's click does not match the var currentSequence, alerts user
+//game over
+
+
+
+$('#startButton').click(function(){
+  // var $thisArm = $(this)
+  // $thisArm.addClass('selectedArm')
+  var $thisArm = getArm().id;
+  console.log($thisArm)
+  $('#' + $thisArm).addClass('selectedArm')
   setTimeout(function(){
-    $('#arm0').removeClass('selectedArm')
-  }, 500);
+    console.log("changing back", $thisArm)
+    $('#' + $thisArm).removeClass('selectedArm')
+  }, 500)
 })
 
-var elems = document.getElementByClass('arm');
-var colorArray = jQuery.makeArray( elems );
 
-console.log(colorArray)
+
+
+
 
 
 
