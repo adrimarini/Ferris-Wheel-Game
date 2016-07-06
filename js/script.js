@@ -44,6 +44,8 @@ $arm.click(function(){
   guess.push(this)
   if (guess[guess.length - 1] !== currentSequence[currentSequence.length - 1]) {
     alert("Game Over. You made it to Level " + currentSequence.length)
+  } else {
+    lightUp()
   }
 
 })
@@ -67,7 +69,7 @@ $('.arm').each(function(){
     $allArms.push(this);
 });
 //function that houses the random arm and adds to currentSequence
-var getArm = function(){
+function getArm(){
 
   var $anArm =  $allArms[Math.floor(Math.random() *$allArms.length)]
   currentSequence.push($anArm);
@@ -76,24 +78,40 @@ var getArm = function(){
 }
 
 
-//if the user's click does not match the var currentSequence, alerts user
-//game over
-
-
-
-$('#startButton').click(function(){
+function lightUp(){
   // var $thisArm = $(this)
   // $thisArm.addClass('selectedArm')
   var $thisArm = getArm().id;
   console.log($thisArm)
-  $('#' + $thisArm).addClass('selectedArm')
-  setTimeout(function(){
-    console.log("changing back", $thisArm)
-    $('#' + $thisArm).removeClass('selectedArm')
-  }, 500)
-})
+
+  function lightEach() {
+    $('#' + $lightingArm).addClass('selectedArm')
+    setTimeout(function(){
+      console.log("changing back", $lightingArm)
+      $('#' + $lightingArm).removeClass('selectedArm')
+    }, 500)
+  }
+
+  for(var i = 0; i < currentSequence.length; i++){
+    var $lightingArm = currentSequence[i].id
+    console.log('lighting arm is: ' + $lightingArm)
+    setTimeout(lightEach, 1500)
+  }
+}
 
 
+$('#startButton').click(lightUp)
+
+
+// var player = []
+//
+// addListeners();
+//
+// function addListeners() {
+// 	for (var i = 0; i < $allArms.length; i++) {
+// 		.on('click', function() {
+// 			if (this
+// }
 
 
 
