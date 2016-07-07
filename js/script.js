@@ -84,15 +84,17 @@ $arm.click(function(){
     $thisArm.removeClass('selectedArm')
   }, 500)
   guess.push(this)
-  if (guess.length === currentSequence.length) {
-    for (var i=0; i<guess.length; i++){
-      if (guess[i] !== currentSequence[i]) {
-        alert("Game Over. You made it to Level " + currentSequence.length)
-      }
+  for (var i = 0; i < guess.length; i++){
+    if (guess[i] !== currentSequence[i]) {
+      alert("Game Over. You made it to Level " + currentSequence.length)
+      guess = []
+      currentSequence = []
+      return
     }
+  }
+  if (guess.length === currentSequence.length) {
     guess = [];
     lightUp()
-
   }
 })
 

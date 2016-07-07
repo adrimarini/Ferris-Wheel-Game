@@ -6,7 +6,7 @@ Monica Ferris Wheel. Get it right and you move to the next level! Get it wrong
 and the wheel gets angry!<h4>
 
 <h2>/// Here are the rules :</h2>
-<p>  Step 1: CHOSE A SPEED. <br>
+<p>  Step 1: CHOSE A SPEED. 
       <li> The wheel will begin in motion, for newbees, PAUSE the wheel, press start, and see what level you can get to! If your feeling confident, click PLAY to set the wheel back in motion, click start, and get ready for a challenge.
       <br>
  Step 2: GAME OVER <br>
