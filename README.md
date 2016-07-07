@@ -1,24 +1,24 @@
 
-<h1>//// F E R R I S W H E E L G A M E ////<h1>
+<h1>//// F E R R I S   W H E E L   G A M E ////<h1>
 
 <h4>In this game you will be asked to duplicate a light pattern shown on the Santa
 Monica Ferris Wheel. Get it right and you move to the next level! Get it wrong
 and the wheel gets angry!<h4>
 
 <h2>/// Here are the rules :</h2>
-  <h4>Step 1: CHOSE A SPEED.</h4>
+<p>  Step 1: CHOSE A SPEED. <br>
       <li> The wheel will begin in motion, for newbees, PAUSE the wheel, press start, and see what level you can get to! If your feeling confident, click PLAY to set the wheel back in motion, click start, and get ready for a challenge.
       <br>
-<h4>  Step 2: GAME OVER </h4>
+ Step 2: GAME OVER <br>
       <li> If you select the wrong arm, the game will alert you with a game over
       message and let you know what level you made it to
       <br>
-<h4>  Step 3: PLAY ANOTHER ROUND </h4>
+ Step 3: PLAY ANOTHER ROUND <br>
       <li> To play another round, refresh the page, decide if you want your wheel
       in motion or paused, then click the start button
       <br>
 Good Luck
-
+</p>
 
 <h2>/// Technologies Used: </h2>
   <p>This game was created using Javascript and jQuery. The animation of the wheel
