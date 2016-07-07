@@ -1,9 +1,9 @@
 
 <h1>//// F E R R I S W H E E L G A M E ////<h1>
 
-In this game you will be asked to duplicate a light pattern shown on the Santa
+<h3>In this game you will be asked to duplicate a light pattern shown on the Santa
 Monica Ferris Wheel. Get it right and you move to the next level! Get it wrong
-and the wheel gets angry!
+and the wheel gets angry!<h3>
 
 <h2>/// Here are the rules :</h2>
   Step 1: CHOSE A SPEED.
