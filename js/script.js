@@ -86,12 +86,13 @@ $arm.click(function(){
   }, 500)
   guess.push(this)
   if (guess.length === currentSequence.length) {
-    if (guess.toString() !== currentSequence.toString()) {
-      alert("Game Over. You made it to Level " + currentSequence.length)
-    } else {
-      guess = [];
-      lightUp()
+    for (var i = 0; i < guess.length; i++){
+      if (guess[i] !== currentSequence[i]) {
+        alert("Game Over. You made it to Level " + currentSequence.length)
+      }
     }
+    guess = [];
+    lightUp()
   }
 })
 
