@@ -28,9 +28,9 @@ addArms(8);//values between 2 and 12 work best
 TweenLite.from(ferris, 1, {autoAlpha:0});
 
 //Animation for movement of wheel
-tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
-tl.to(center, 20, {rotation:360,  ease:Linear.easeNone})
-
+// tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
+// tl.to(center, 20, {rotation:360,  ease:Linear.easeNone})
+//UNCOMMENT THE ABOVE TO ANIMATE THE WHEEL
 
 //UI Controls
 $( "#slider" ).slider({
@@ -71,6 +71,7 @@ $("#pauseBtn").click(function(){
 // PARTS OF THE ABOVE IS TAKEN FROM CODEPEN EXAMPLE BY GREENSTOCK: UI controls and
 //animation for movement of the wheel. Colors, speeds, and click functionality were
 //added by me
+//---------------------------------------
 //THE BELOW IS MY GAME CODE
 
 $arm = $('.arm')
@@ -80,13 +81,14 @@ $arm.click(function(){
   var $thisArm = $(this)
   $thisArm.addClass('selectedArm')
   setTimeout(function(){
-    console.log("changing back", this)
+    // console.log("changing back", this)
     $thisArm.removeClass('selectedArm')
   }, 500)
   guess.push(this)
   if (guess[guess.length - 1] !== currentSequence[currentSequence.length - 1]) {
     alert("Game Over. You made it to Level " + currentSequence.length)
-  } else {
+  } else if(guess.length === currentSequence.length){
+    //wait for input to match the currentSequence array FULLY. then
     lightUp()
   }
 
@@ -95,26 +97,26 @@ $arm.click(function(){
 
 var currentSequence = [];
 
-
-//array that gives back random arm
+//array that holds all divs with class arm
 var $allArms = [];
 $('.arm').each(function(){
     $allArms.push(this);
+    // console.log('arm array' + currentSequence)
 });
 //function that houses the random arm and adds to currentSequence
 function getArm(){
-
   var $anArm =  $allArms[Math.floor(Math.random() *$allArms.length)]
   currentSequence.push($anArm);
-
-  return currentSequence[currentSequence.length - 1]
+  // console.log('$anArm' + $anArm)
+  return currentSequence
+  // [currentSequence.length - 1]
 }
 
 
+
 function lightUp(){
-  // var $thisArm = $(this)
-  // $thisArm.addClass('selectedArm')
-  var $thisArm = getArm().id;
+
+  var $thisArm = getArm(); //removed.id bfore colon
   console.log($thisArm)
 
   function lightEach() {
@@ -122,16 +124,21 @@ function lightUp(){
     setTimeout(function(){
       console.log("changing back", $lightingArm)
       $('#' + $lightingArm).removeClass('selectedArm')
-    }, 500)
+    }, 1500)
   }
 
   for(var i = 0; i < currentSequence.length; i++){
     var $lightingArm = currentSequence[i].id
     console.log('lighting arm is: ' + $lightingArm)
-    setTimeout(lightEach, 1500)
+    setTimeout(lightEach(), 1500)
   }
 }
+
+//josh's suggestion
 // currentSequence.forEach(function(){
 // lightUp()})
+
+
+
 
 $('#startButton').click(lightUp)
