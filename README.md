@@ -19,24 +19,26 @@ Good Luck
 
 
 <h2> Technologies Used: </h2>
-  This game was created using Javascript and jQuery. The animation of the wheel
+  <p>This game was created using Javascript and jQuery. The animation of the wheel
   was done using a framework called TweenLite made by GreenStock. A more advanced
   example of the ferris wheel animation used in the game can be found at:
-  https://codepen.io/GreenSock/pen/wBbKs/.
+  https://codepen.io/GreenSock/pen/wBbKs/.</p>
 
   <h2> Approach Taken <h2>
 
-  I created this game by first generating the wheel with Tweenlite, then added in
-  game logic using vanilla Javascript and jQuery.
+  <p>I created this game by first generating the wheel with Tweenlite, then added in
+  game logic using vanilla Javascript and jQuery.</p>
 
   <h2> Unsolved Problems <h2>
 
-  Some next steps I would like to take are to:
+  <h4>Some next steps I would like to take are to:</h4>
+  <p>
     <li>create baskets for the Ferris Wheel,  and work on making the interface look better/ more like a real ferris wheel
     <li>prevent the wheel from starting in motion right away
     <li>make the game refresh itself once a player loses
     <li>fix the start button and deactivate it once the player begins a game
     <li>change the 'Game over' alert to something more user friendly
     <li>add level buttons that change the speed the wheel turns based on the level (the higher the level, the faster it will spin)
+</p>
 
-Here is a link to my Trello board: https://trello.com/b/bhjGYbVj/project-1
+<p>Here is a link to my Trello board: https://trello.com/b/bhjGYbVj/project-1 </p>
