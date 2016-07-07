@@ -17,7 +17,7 @@ body {
   height:600px;
   position:relative;
   border-radius:50%;
-  border:7px solid brown;
+  border:7px solid #402217;
 /*   visibility:hidden; */
 
 }
@@ -38,8 +38,8 @@ body {
   position:absolute;
   left:10px;
   top:7px;
-  opacity: 0.5;
-  border: dashed;
+  opacity: 0.3;
+  border: solid grey 1;
 }
 
 
@@ -48,15 +48,15 @@ body {
 }
 
 #arm1 {
-  background-color: lime;
+  background-color: #45FF00;
 }
 
 #arm2 {
-  background-color: green;
+  background-color: #00FFFF;
 }
 
 #arm3 {
-  background-color: orange;
+  background-color: #fff;
 }
 
 #arm4 {
@@ -64,11 +64,11 @@ body {
 }
 
 #arm5 {
-  background-color: magenta;
+  background-color: #FF007F;
 }
 
 #arm6 {
-  background-color: yellow;
+  background-color: #FFFF00;
 }
 
 #arm7 {
