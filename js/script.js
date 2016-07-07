@@ -89,6 +89,8 @@ $arm.click(function(){
       alert("Game Over. You made it to Level " + currentSequence.length)
       guess = []
       currentSequence = []
+      $('#startButton').text("Play Again")
+      $('#startButton').fadeIn()
       return
     }
   }
@@ -156,4 +158,7 @@ function lightUp(){
 
 
 
-$('#startButton').click(lightUp)
+$('#startButton').click(function(){
+  $('#startButton').fadeOut()
+  lightUp()
+})
