@@ -128,11 +128,22 @@ function lightUp(){
     }, 1500)
   }
 
-  for(var i = 0; i < currentSequence.length; i++){
-    var $lightingArm = currentSequence[i].id
-    console.log('lighting arm is: ' + $lightingArm)
-    setTimeout(lightEach($lightingArm), 1500)
-  }
+  // for(var i = 0; i < currentSequence.length; i++){
+  //   var $lightingArm = currentSequence[i].id
+  //   console.log('lighting arm is: ' + $lightingArm)
+  //   setTimeout(lightEach($lightingArm), 1500)
+  // }
+
+  var i = 0;
+  var lightingLoop = setInterval(function(){
+      var $lightingArm = currentSequence[i].id
+      console.log('lighting arm is: ' + $lightingArm)
+      setTimeout(lightEach($lightingArm), 1500)
+      i++;
+      if(i === currentSequence.length) {
+          clearInterval(lightingLoop);
+      }
+  }, 1500);
 }
 
 //josh's suggestion
