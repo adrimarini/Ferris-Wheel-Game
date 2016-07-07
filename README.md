@@ -1,35 +1,36 @@
 
 <h1>//// F E R R I S W H E E L G A M E ////<h1>
 
-<h3>In this game you will be asked to duplicate a light pattern shown on the Santa
+<h4>In this game you will be asked to duplicate a light pattern shown on the Santa
 Monica Ferris Wheel. Get it right and you move to the next level! Get it wrong
-and the wheel gets angry!<h3>
+and the wheel gets angry!<h4>
 
 <h2>/// Here are the rules :</h2>
-  Step 1: CHOSE A SPEED.
+  <h4>Step 1: CHOSE A SPEED.</h4>
       <li> The wheel will begin in motion, for newbees, PAUSE the wheel, press start, and see what level you can get to! If your feeling confident, click PLAY to set the wheel back in motion, click start, and get ready for a challenge.
-  Step 2: GAME OVER
+      <br>
+<h4>  Step 2: GAME OVER </h4>
       <li> If you select the wrong arm, the game will alert you with a game over
       message and let you know what level you made it to
-  Step 3: PLAY ANOTHER ROUND
+      <br>
+<h4>  Step 3: PLAY ANOTHER ROUND </h4>
       <li> To play another round, refresh the page, decide if you want your wheel
       in motion or paused, then click the start button
-
+      <br>
 Good Luck
 
 
-<h2> Technologies Used: </h2>
+<h2>/// Technologies Used: </h2>
   <p>This game was created using Javascript and jQuery. The animation of the wheel
   was done using a framework called TweenLite made by GreenStock. A more advanced
   example of the ferris wheel animation used in the game can be found at:
   https://codepen.io/GreenSock/pen/wBbKs/.</p>
 
-  <h2> Approach Taken <h2>
+  <h2>/// Approach Taken </h2>
 
-  <p>I created this game by first generating the wheel with Tweenlite, then added in
-  game logic using vanilla Javascript and jQuery.</p>
+  <p>I created this game by first generating the wheel with Tweenlite, then added in game logic using vanilla Javascript and jQuery.</p>
 
-  <h2> Unsolved Problems <h2>
+  <h2>/// Unsolved Problems <h2>
 
   <h4>Some next steps I would like to take are to:</h4>
   <p>
@@ -41,4 +42,4 @@ Good Luck
     <li>add level buttons that change the speed the wheel turns based on the level (the higher the level, the faster it will spin)
 </p>
 
-<p>Here is a link to my Trello board: https://trello.com/b/bhjGYbVj/project-1 </p>
+<p>Here is a link to my Trello board used to track my progress: https://trello.com/b/bhjGYbVj/project-1 </p>
