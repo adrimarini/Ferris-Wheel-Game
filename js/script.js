@@ -28,8 +28,8 @@ addArms(8);//values between 2 and 12 work best
 TweenLite.from(ferris, 1, {autoAlpha:0});
 
 //Animation for movement of wheel
-// tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
-// tl.to(center, 20, {rotation:360,  ease:Linear.easeNone})
+tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
+tl.to(center, 20, {rotation:360,  ease:Linear.easeNone})
 //UNCOMMENT THE ABOVE TO ANIMATE THE WHEEL
 
 //UI Controls
@@ -85,13 +85,14 @@ $arm.click(function(){
     $thisArm.removeClass('selectedArm')
   }, 500)
   guess.push(this)
-  if (guess[guess.length - 1] !== currentSequence[currentSequence.length - 1]) {
-    alert("Game Over. You made it to Level " + currentSequence.length)
-  } else if(guess.length === currentSequence.length){
-    //wait for input to match the currentSequence array FULLY. then
-    lightUp()
+  if (guess.length === currentSequence.length) {
+    if (guess.toString() !== currentSequence.toString()) {
+      alert("Game Over. You made it to Level " + currentSequence.length)
+    } else {
+      guess = [];
+      lightUp()
+    }
   }
-
 })
 
 
@@ -119,18 +120,18 @@ function lightUp(){
   var $thisArm = getArm(); //removed.id bfore colon
   console.log($thisArm)
 
-  function lightEach() {
-    $('#' + $lightingArm).addClass('selectedArm')
+  function lightEach(thisArm) {
+    $('#' + thisArm).addClass('selectedArm')
     setTimeout(function(){
-      console.log("changing back", $lightingArm)
-      $('#' + $lightingArm).removeClass('selectedArm')
+      console.log("changing back", thisArm)
+      $('#' + thisArm).removeClass('selectedArm')
     }, 1500)
   }
 
   for(var i = 0; i < currentSequence.length; i++){
     var $lightingArm = currentSequence[i].id
     console.log('lighting arm is: ' + $lightingArm)
-    setTimeout(lightEach(), 1500)
+    setTimeout(lightEach($lightingArm), 1500)
   }
 }
 
