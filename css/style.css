@@ -1,38 +1,31 @@
 
 body {
 	background-color:#000000;
-	/*margin:20px;
-  margin-left: 30%;*/
   overflow:hidden;
-	font-family:Arial, Helvetica, sans-serif;
-
+	font-family:Futura;
 }
-
-
 
 .ferris {
   position:relative;
   margin:auto;
-  width:600px;
-  height:600px;
+  width:400px;
+  height:400px;
   position:relative;
   border-radius:50%;
   border:7px solid #402217;
-/*   visibility:hidden; */
-
+  zoom:140%;
 }
 
 .pivot{
   position:absolute;
   width:20px;
   height:20px;
-  background: magenta;
+  background: #000;
+  border-radius: 50%;
 }
 
-
-
 .arm {
-  width:300px;
+  width:200px;
   height:10px;
   background: #000000;
   position:absolute;
@@ -42,18 +35,33 @@ body {
   border: solid grey 1;
 }
 
-/*.sideBanner {
-  width: 15%;
-  height: 720px;
-  background: rgba(255, 255, 255, 0.3) ;
-  float: left;
+.pivot{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:#600;
+}
 
-}*/
+.outer {
+  top:-200px;
+  border-radius:50%;
+  background:black;
+}
+
+.basket {
+  position:relative;
+  width:58px;
+  height:40px;
+  background:url("../img/basket.png");
+  left:-30px;
+  top:10px;
+  border-radius:6px;
+
+}
 
 .hidden {
   display: none;
 }
-
 
 #arm0 {
   background-color: red;;
@@ -97,6 +105,7 @@ body {
   cursor:pointer;
   float: right;
   margin-right: 15%;
+  font-family: Futura;
 }
 
 #playBtn {
@@ -107,15 +116,11 @@ body {
   margin-left:
 }
 
-
-
 .selectedArm {
   opacity: 1;
 }
 
 .navBtn {
-
-  padding:10px;
   background-color:rgba(255, 255, 255, 0.3);
   display:inline-block;
   padding:10px;
@@ -124,14 +129,6 @@ body {
   color:grey;
   cursor:pointer;
 }
-
-
-
-
-
-
-
-
 
 
 

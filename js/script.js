@@ -4,19 +4,18 @@ var ferris = $("#ferris"),
 
 
 
-TweenLite.set(center, {x:290, y:290});
+TweenLite.set(center, {x:190, y:190});
 
 //I borrowed code from the example for the creation of the wheel itself
 function addArms(numArms) {
   var space = 360/numArms;
   for (var i = 0; i < numArms; i++){
     var newArm = $("<div>", {class:"arm", id: "arm" + i}).appendTo(center)
-
-    // var newPivot = $("<div>", {class:"pivot outer"}).appendTo(center);
-    // var newBasket = $("<div>", {class:"basket"}).appendTo(newPivot);
-    // TweenLite.set(newPivot, {rotation:i*space, transformOrigin:"10px 210px"})
+    var newPivot = $("<div>", {class:"pivot outer"}).appendTo(center);
+    var newBasket = $("<div>", {class:"basket"}).appendTo(newPivot);
+    TweenLite.set(newPivot, {rotation:i*space, transformOrigin:"10px 210px"})
     TweenLite.set(newArm, {rotation:(i*space) -90, transformOrigin:"0px 3px"})
-    // TweenLite.set(newBasket, {rotation:  (-i * space), transformOrigin:"50% top" });
+    TweenLite.set(newBasket, {rotation:  (-i * space), transformOrigin:"50% top" });
 
 
   }
@@ -26,12 +25,13 @@ function addArms(numArms) {
 addArms(8);//values between 2 and 12 work best
 TweenLite.from(ferris, 1, {autoAlpha:0});
 
-//Animation for movement of wheel
+//Animation for movement of wheel(borrowed)
 tl = new TimelineMax({repeat:-1, onUpdate:updateSlider});
 tl.to(center, 20, {rotation:360,  ease:Linear.easeNone})
-//UNCOMMENT THE ABOVE TO ANIMATE THE WHEEL
+tl.to($(".basket"), 20, {rotation:"-=360",  ease:Linear.easeNone},0)
+//UNCOMMENT THE ABOVE TO UNANIMATE THE WHEEL
 
-//UI Controls
+//UI Controls(borrowed)
 $( "#slider" ).slider({
   range: false,
   min: 0,
@@ -58,7 +58,7 @@ $( "#sliderSpeed" ).slider({
   }
 });
 
-//UI control nav buttons
+//UI control nav buttons(functionality borrowed)
 $("#playBtn").click(function(){
   tl.play();
 });
@@ -69,7 +69,7 @@ $("#pauseBtn").click(function(){
 
 // PARTS OF THE ABOVE IS TAKEN FROM CODEPEN EXAMPLE BY GREENSTOCK: UI controls and
 //animation for movement of the wheel. Colors, speeds, and click functionality were
-//added by me
+//added by me. URL for the animated wheel can be found on my README
 //---------------------------------------
 //THE BELOW IS MY GAME CODE
 
@@ -80,7 +80,6 @@ $arm.click(function(){
   var $thisArm = $(this)
   $thisArm.addClass('selectedArm')
   setTimeout(function(){
-    // console.log("changing back", this)
     $thisArm.removeClass('selectedArm')
   }, 500)
   guess.push(this)
@@ -89,7 +88,7 @@ $arm.click(function(){
       alert("Game Over. You made it to Level " + currentSequence.length)
       guess = []
       currentSequence = []
-      $('#startButton').text("Play Again")
+      $('#startButton').text("P L A Y  A G A I N")
       $('#startButton').fadeIn()
       return
     }
@@ -100,29 +99,24 @@ $arm.click(function(){
   }
 })
 
-
+// empty array that randomly generated arm is pushed into
 var currentSequence = [];
 
 //array that holds all divs with class arm
 var $allArms = [];
 $('.arm').each(function(){
     $allArms.push(this);
-    // console.log('arm array' + currentSequence)
 });
 //function that houses the random arm and adds to currentSequence
 function getArm(){
   var $anArm =  $allArms[Math.floor(Math.random() *$allArms.length)]
   currentSequence.push($anArm);
-  // console.log('$anArm' + $anArm)
   return currentSequence
-  // [currentSequence.length - 1]
 }
-
-
 
 function lightUp(){
 
-  var $thisArm = getArm(); //removed.id bfore colon
+  var $thisArm = getArm();
   console.log($thisArm)
 
   function lightEach(thisArm) {
@@ -132,12 +126,6 @@ function lightUp(){
       $('#' + thisArm).removeClass('selectedArm')
     }, 1500)
   }
-
-  // for(var i = 0; i < currentSequence.length; i++){
-  //   var $lightingArm = currentSequence[i].id
-  //   console.log('lighting arm is: ' + $lightingArm)
-  //   setTimeout(lightEach($lightingArm), 1500)
-  // }
 
   var i = 0;
   var lightingLoop = setInterval(function(){
@@ -150,13 +138,6 @@ function lightUp(){
       }
   }, 1500);
 }
-
-//josh's suggestion
-// currentSequence.forEach(function(){
-// lightUp()})
-
-
-
 
 $('#startButton').click(function(){
   $('#startButton').fadeOut()
