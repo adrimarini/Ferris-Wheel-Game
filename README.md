@@ -2,8 +2,9 @@
 <h1>//// F E R R I S   W H E E L   G A M E ////<h1>
 
 <h4>In this game you will be asked to duplicate a light pattern shown on the Santa
-Monica Ferris Wheel. Get it right and you move to the next level! Get it wrong
-and the wheel gets angry!<h4>
+Monica Ferris Wheel. Get it right and you move forward to a new round with more arms to remember!<h4>
+<h4>Link to Game</h4>
+https://adrimarini.github.io/Project-1/
 
 <h2>/// Here are the rules :</h2>
 <p>  Step 1: CHOSE A SPEED.
@@ -21,9 +22,7 @@ Good Luck
 </p>
 
 <h2>/// Technologies Used: </h2>
-  <p>This game was created using Javascript and jQuery. The animation of the wheel
-  was done using a framework called TweenLite made by GreenStock. A more advanced
-  example of the ferris wheel animation used in the game can be found at:
+  <p>This game was created using HTML, CSS, Javascript and jQuery. The animation of the wheel was done using a framework called TweenLite made by GreenStock. A more advanced example of the ferris wheel animation used in the game can be found at:
   https://codepen.io/GreenSock/pen/wBbKs/.</p>
 
   <h2>/// Approach Taken </h2>
